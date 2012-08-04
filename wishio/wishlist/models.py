@@ -20,6 +20,7 @@ class Item(models.Model):
     name = models.CharField(max_length=200)
     url = models.URLField()
     price = models.DecimalField(max_digits=9, decimal_places=2)
+    photo = models.URLField()
     #rank = models.IntegerField(unique=True)
     wishlist = models.ForeignKey('WishList')
 

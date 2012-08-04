@@ -13,9 +13,92 @@
 </head>
 
 <body>
-    <h1>{{ wishlist.name }}</h1>
 
+    <div class="banner"><h1>{{ wishlist.name }}</h1></div>
+    <div class="bar">
+        <a href="#add" data-toggle="modal"><img style="float: right; padding-right:135px;" src="../static/img/add-a-wish.png"></a>
+    </div>
+    <div class="wishlist-contain">
+        <div class="left-bar">
+            <h1></h1>
+        </div>
+
+        <div class="right">
+            {% for item in items %}
+            <div class="view view-first item">
+                <img src="{{ item.photo }}" />
+                <div class="mask">
+                    <h2>{{ item.name }}</h2>
+                    <p>{{ item.price }}</p>
+                    <a href="{{ item.url }}" class="info">Go to Site</a>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+
+    </div>
+
+<!--     <div class="view view-first">
+        <img src="../static/images/1.jpg" />
+        <div class="mask">
+            <h2>Hover Style #1</h2>
+            <p>A wonderful serenity has taken possession of my entire soul, like these sweet mornings of spring which I enjoy with my whole heart.</p>
+            <a href="#" class="info">Read More</a>
+        </div>
+    </div>  
+    <div class="view view-first">
+        <img src="./static/images/2.jpg" />
+        <div class="mask">
+            <h2>Hover Style #1</h2>
+            <p>A wonderful serenity has taken possession of my entire soul, like these sweet mornings of spring which I enjoy with my whole heart.</p>
+            <a href="#" class="info">Read More</a>
+        </div>
+    </div>  
+    <div class="view view-first">
+        <img src="./static/images/3.jpg" />
+        <div class="mask">
+            <h2>Hover Style #1</h2>
+            <p>A wonderful serenity has taken possession of my entire soul, like these sweet mornings of spring which I enjoy with my whole heart.</p>
+            <a href="#" class="info">Read More</a>
+        </div>
+    </div>  
+    <div class="view view-first">
+        <img src="./static/images/4.jpg" />
+        <div class="mask">
+            <h2>Hover Style #1</h2>
+            <p>A wonderful serenity has taken possession of my entire soul, like these sweet mornings of spring which I enjoy with my whole heart.</p>
+            <a href="#" class="info">Read More</a>
+        </div>
+    </div>   -->
+
+<div class="modal hide" id="add">
+  <div class="modal-header">
+    <h3>Add a Wish</h3>
+  </div>
+  <div class="modal-body">
+    <form method="POST" action="/wishlist/">
+        {% csrf_token %}
+        <input type="text" placeholder="input url here" class="medium-input" name="url"></input>
+  </div>
+  <div class="modal-footer">
+    <a href="#" class="btn" data-dismiss="modal">Cancel</a>
+    <button type="submit" class="btn btn-primary" name="add">Add Wish</button>
+    </form>
+  </div>
 </div>
+
 </body> 
+
+<script src="http://twitter.github.com/bootstrap/assets/js/jquery.js"></script>
+<script src="http://twitter.github.com/bootstrap/assets/js/bootstrap-modal.js"></script>
+<script>
+$('.item').hover(
+    function() {
+    
+    }
+);
+
+</script>
+
 
 </html>
