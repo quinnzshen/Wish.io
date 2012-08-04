@@ -1,0 +1,38 @@
+<html>
+<head>
+
+    <meta charset="UTF-8">
+    <title>Wish.io</title>
+    <meta name="description" content="The Universal Web Wish List">
+    <meta name="author" content="LinkedIn HackDay 2012">
+
+    <link rel="stylesheet" type="text/css" href="../static/css/style.css" />
+    <link href='http://fonts.googleapis.com/css?family=Lobster' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Ubuntu' rel='stylesheet' type='text/css'>
+
+</head>
+
+<body>
+    <div class="container">
+        <div class="rounded-register-outer">
+            <div class="rounded-register">
+                <div class="logo">
+                    <h1>Registration</h1>
+                </div>
+                <form class="login" method="POST" action="/register/">
+                    {% csrf_token %}
+                    <label>Username</label></br>
+                    <input type="text" name="user"></input>
+
+                    </br>
+
+                    <label>Password</label></br>
+                    <input type="password" name="password"></input>
+                    <input type="submit" value="Register" name="register"></input>
+                </form>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
