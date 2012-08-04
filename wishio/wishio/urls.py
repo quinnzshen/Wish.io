@@ -7,7 +7,7 @@ admin.autodiscover()
 
 urlpatterns = patterns('',
     # Examples:
-    url(r'^$', 'wishio.views.home', name='home'),
+    url(r'^$', 'wishlist.views.home', name='home'),
     #url(r'^wishio/', include('wishio.views.urls')),
 
     # Uncomment the admin/doc line below to enable admin documentation:
@@ -16,6 +16,6 @@ urlpatterns = patterns('',
     # Uncomment the next line to enable the admin:
     url(r'^admin/', include(admin.site.urls)),
     
-   # url(r'^register', 'wishio.views.register', name='register'),
-   # url(r'^mywishlist', 'wishio.views.mywishlist', name='my-wishlist'),
+    url(r'^register', 'wishlist.views.register', name='register'),
+    url(r'^mywishlist', 'wishlist.views.mywishlist', name='my-wishlist'),
 )
