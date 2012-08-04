@@ -1,0 +1,13 @@
+{
+  "name": "Wish.io",
+  "version": "0.0",
+  "manifest_version": 2,
+  "description": "Wish.io Chrome Extension",
+  "browser_action": {
+    "default_icon": "wishio-icon.png",
+    "default_popup": "popup.html"
+  },
+  "permissions": [
+    "tabs", "http://*/*", "https://*/*"
+  ]
+}
