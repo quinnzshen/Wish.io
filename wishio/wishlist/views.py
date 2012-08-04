@@ -68,19 +68,19 @@ def wishlist(request, board_id = '1'):
         response = urlopen(url)
         html = response.read()
         #script to retrieve
-        item = Item(name="Dress", url=url, price=1000.00)
+        item = Item(name="Dress", url=url, price=1000.00, photo=url)
         item.wishlist = wishlist
         item.save()
 
-    add_item("http://www.google.com")
-    add_item("http://www.google.com")
-    add_item("http://www.google.com")
-    add_item("http://www.google.com")
-
     items = [item for item in Item.objects.filter(wishlist=wishlist)]
+    
+    if len(items) == 0:
+        add_item("http://ecx.images-amazon.com/images/I/31BuXM4sfjL.jpg")
+
     
     con = Context({
             'wishlist': wishlist,
+            'items': items,
         })
     return render_to_response('wishlist.html', con)
 
